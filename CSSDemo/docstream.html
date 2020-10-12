@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三种定位方式</title>
+    <style>
+        .ex1{
+            width: 800px;
+            margin: auto;
+            border: 3px solid #73AD21;
+        }
+
+        .relative{
+            width: 100px;
+            border: 3px solid #73AD21;
+            position: relative;
+            top: 5px;
+            left: 80px;
+            background-color: aqua;    
+        }
+
+        .ex2{
+            width: 800px;
+            margin: auto;
+            border: 3px solid #73AD21;
+            position: relative;
+        }
+
+        .absolute{
+            width: 100px;
+            border: 3px solid #73AD21;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: aqua;    
+        }
+
+        .float{
+            width: 100px;
+            border: 3px solid #73AD21;
+            float: left;
+            background-color: aqua;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>三种定位方式：普通文档流定位、position定位、float定位</h1>
+    <a href="https://blog.csdn.net/u010486124/article/details/52965855" style="text-decoration:none;">Ref:https://blog.csdn.net/u010486124/article/details/52965855</a>
+    <br>
+
+    <h3>1. relative相对positioned祖先定位的用法及relative不会使元素脱离文档流</h3>
+    <div class="ex1">
+        <div>aaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+
+        <div class="relative">123</div>
+        <div class="relative">123</div>
+        
+
+        <div>aaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+        <p>relative不会使元素脱离文档流，且定位按照没有relative时定位下一个元素，但实际显示时按照relative指示的top left..等属性显示</p>
+    </div>
+
+    <br>
+
+    <h3>2. absolute和fixed的position定位使与元素脱离文档流</h3>
+    <div class="ex2">
+        <div>aaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+
+        <div class="absolute">123</div>
+        <div class="absolute">123</div>
+        
+
+        <div>aaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+
+        <p>absolute会使元素脱离文档流，absolute后文档流元素顶替位置，可以从absolute元素上穿过去 && fixed定位也会使元素脱离文档流</p>
+    </div>
+
+    <br/>
+
+    <div class="ex1">
+        <div>aaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+
+        <div class="float">123</div>
+        <div class="float">123</div>
+        
+
+        <div>aaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+
+        <p>float也会使元素脱离文档流，float后文档流元素会顶替位置，可以穿过float元素
+            <br>
+            float(浮动模型)是一种可视化格式模型，浮动的框可以float:left 或right，<strong>直到它的外边缘碰到包含框或者另一个浮动元素的框的边缘。</strong>
+        </p>
+    </div>
+</body>
+</html>
