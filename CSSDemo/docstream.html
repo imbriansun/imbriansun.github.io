@@ -38,6 +38,7 @@
 
         .float{
             width: 100px;
+            height: 50px;
             border: 3px solid #73AD21;
             float: left;
             background-color: aqua;
@@ -79,7 +80,7 @@
     </div>
 
     <br/>
-    <h3>3. float脱离文档流&相对“边框”定位</h3>
+    <h3>3. float脱离文档流但文档流会环绕过float元素 & float元素的相对“边框”定位</h3>
     <div class="ex1">
         <div>aaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
 
@@ -89,7 +90,9 @@
 
         <div>aaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
 
-        <p>float也会使元素脱离文档流，float后文档流元素会顶替位置，可以穿过float元素
+        <p>float也会使元素脱离文档流，float后文档流元素不顶替位置，float元素只是相对元素原位置float起来了。
+            <br>
+            float属性本身最初就是想搞成我文字环绕float照片的功能
             <br>
             float(浮动模型)是一种可视化格式模型，浮动的框可以float:left 或right，<strong>直到它的外边缘碰到包含框或者另一个浮动元素的框的边缘。</strong>
         </p>
