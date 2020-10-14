@@ -46,8 +46,9 @@
         table th, table td{
             padding: 0 2em;
         }
-        .LocalStoragePart{
+        .LocalStoragePart, .LocalStorageDemo{
             margin: 20px;
+            padding: 15px;
             border: black 2px solid;
         }
 
@@ -132,14 +133,61 @@
            <p><a href="https://mdn.github.io/dom-examples/web-storage/">LocalStorage Demo</a></p>
            <p><a href="https://mdn.github.io/dom-examples/web-storage/event.html">LocalStorage Demo Output</a></p>
            <p><a href="https://github.com/mdn/dom-examples/tree/master/web-storage">Web localStorage Demo Source Code</a></p>
-        </div> 
-
-        <div class="LocalStorageDemo">
+        
+           <div class="LocalStorageDemo">
             <h3>LocalStorage Demonstration</h3>
             <div>
-                
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Document</title>
+                </head>
+                <body>
+                    <h2>Input name and we will print on screen:</h2>
+                    <p>Key:</p>
+                    <input id="nameVar">
+                    <p>Value:</p>
+                    <input id="valueVar">
+                    <button id="keyValueBtn">Submit</button>
+
+                    <br>
+
+                    <p>Key:</p>
+                    <input id="checkLocalStorage">
+                    <button id="checkLocalStorageBtn">Check</button>
+
+                    <script>
+                        document.getElementById("keyValueBtn").addEventListener("click", function(){
+                            var name = document.getElementById("nameVar").value;
+                            var value = document.getElementById("valueVar").value;
+
+                            localStorage.setItem(name, value);
+                            alert('"' + name + " - " + value + '"' + " pair has been stored locally.");
+                        })
+
+
+
+                        document.getElementById("checkLocalStorageBtn").addEventListener("click", function(){
+                            var checkItem = document.getElementById("checkLocalStorage").value;
+                            var rtn = localStorage.getItem(checkItem);
+                            console.log(rtn);
+                            if(rtn == null){
+                                alert("Doesn't exist.");
+                            }else{
+                                alert("Exist!" + " Value:" + rtn);
+                            }
+                        })
+        
+                </script>
+            </body>
+            </html>
             </div>
         </div>
+        </div> 
+
+        
     
         <div class="SeesionStrogePart">
 
