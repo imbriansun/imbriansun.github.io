@@ -83,6 +83,7 @@
     <main>
         <div class="StroageIntro">
             <h2>Storage</h2>
+            <p style="font-size: 18px;"><em><strong>API其中的keyName、keyValue必须写成字符串的形式，不加引号JS将其当作变量名（标识符）处理</strong></em></p>
             <p> Web Storage API 提供机制， 使浏览器能以一种比使用Cookie更直观的方式存储键/值对。注意：使用Storage保存的数据均会转换成字符串形式保存。</p>
             <p>Web Storage 包含如下两种机制：
                 sessionStorage 为每一个给定的源（given origin）维持一个独立的存储区域，该存储区域在页面会话期间可用（即只要浏览器处于打开状态，包括页面重新加载和恢复）。
@@ -273,7 +274,7 @@
                     <p>当输入东西时，sessionStorage会不断存入输入东西到对应key中实现自动存储</p>
                     <p>sessionStorage有效期就只是当前tab/窗口(Window)打开时，因此刷新页面会自动恢复文字框内容</p>
                     <p>打开同一页面URL，会创建多个sessionStorage，互不干扰</p>
-                    <p style="font-size: 13px;">"JS代码部分：getElementsByTagName --> 返回的是伪数组，但依然可以使用数组下标访问e.g document.getElementsByTagName('input')[0]   console.log(inputvar instanceof Array);   // false"</p>
+                    <p style="font-size: 13px;">"JS代码部分：getElementsByTagName 和 getElementsByClassName --> 返回的是伪数组，但依然可以使用数组下标访问e.g document.getElementsByTagName('input')[0]   console.log(inputvar instanceof Array);   // false"</p>
                     <input id="sessionStorageInput">
                     <button>Submit</button>
 
