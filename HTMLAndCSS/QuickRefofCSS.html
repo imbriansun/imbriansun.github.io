@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Ref of CSS</title>
+</head>
+<body>
+
+<h1>Quick Ref of CSS</h1>
+
+<h2>display</h2>
+
+<p><code>block</code> </p>
+
+<p><code>inline </code></p>
+
+<p><code>none</code> -- 在不删除元素情况下隐藏，visibility:hidden; 隐藏后但还是占据网页空间，而display不是</p>
+
+<p>（visibility还有一个值visible）</p>
+
+<h2>margin: auto;</h2>
+
+<p>元素居中：</p>
+
+<p><code>css
+width: 600px;
+margin: 0 auto;
+</code></p>
+
+<p>唯一的问题是，当浏览器窗口比元素的宽度还要窄时，浏览器会显示一个水平滚动条来容纳页面。  ---&gt; 在这种情况下使用 <code>max-width</code> 替代 <code>width</code> 可以使浏览器更好地处理小窗口的情况。这点在移动设备上显得尤为重要</p>
+
+<pre>
+    <p>&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;style&gt;
+        div.ex1 {
+          width:500px;
+          margin: auto;
+          border: 3px solid #73AD21;
+        }</p>
+        
+        <p>div.ex2 {
+          max-width:500px;
+          margin: auto;
+          border: 3px solid #73AD21;
+        }
+        &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;</p>
+        
+        <p>&lt;div class=&quot;ex1&quot;&gt;This div element has width: 500px;&lt;/div&gt;
+        &lt;br&gt;</p>
+        
+        <p>&lt;div class=&quot;ex2&quot;&gt;This div element has max-width: 500px;&lt;/div&gt;</p>
+        
+        <p>&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Drag the browser window to smaller than 500px wide, to see the difference between 
+        the two divs!&lt;/p&gt;</p>
+        
+        <p>&lt;/body&gt;
+        &lt;/html&gt;</p>
+</pre> 
+</body>
+
+</html>
