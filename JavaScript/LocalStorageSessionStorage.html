@@ -33,6 +33,9 @@
             text-decoration: underline;
             background-color: orange;
         }
+        table{
+            margin: auto;
+        }
 
         table,td {
             border: 1px solid #333;
@@ -50,6 +53,14 @@
             margin: 20px;
             padding: 15px;
             border: black 2px solid;
+        }
+        .SeesionStrogePart, .sessionStorageDemo{
+            margin: 20px;
+            padding: 15px;
+            border: black 2px solid;
+        }
+        .SeesionStrogePart li{
+            text-indent: 2em;
         }
 
     </style>
@@ -80,7 +91,7 @@
             </p>
         </div>
        <div class="LocalStoragePart">
-            <h3>LocalStorage</h3>
+            <h2>LocalStorage</h2>
             <p>用于存储数据到本地，即使会话框被关闭依然保存在本地。</p>
             <table>
                 <thead>
@@ -185,12 +196,103 @@
             </html>
             </div>
         </div>
-        </div> 
-
-        
+        </div>         
     
         <div class="SeesionStrogePart">
+            <h2>SessionStorage</h2>
+            <h3>Characteristic of SessionStorage</h3>
+            <ul>
+                <li>页面会话在浏览器打开期间一直保持，并且重新加载或恢复页面仍会保持原来的页面会话。</li>
+                <li>关闭对应浏览器窗口（Window）/ tab，会清除对应的sessionStorage。 </li>
+                <li>打开多个相同的URL的Tabs页面，会创建各自的sessionStorage。</li>
+                <li>在新标签或窗口打开一个页面时会复制顶级浏览会话的上下文作为新会话的上下文，这点和 session cookies 的运行方式不同。</li>
+            </ul>
 
+            <table>
+                <thead>
+                   <tr>
+                       <th colspan="2">         <!-- colspan="x" 表示这个元素占几列 -->
+                           SessionStorage
+                       </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            存 -- setItem()
+                        </td>
+                        <td>
+                            SessionStorage.setItem(keyName, keyValue);
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            读 -- getItem()
+                        </td>
+                        <td>
+                            var value = SessionStorage.getItem(keyName);
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            删 -- removeItem()
+                        </td>
+                        <td>
+                            SessionStorage.remove(keyName);
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>DeleteAll -- clear()</td>
+                        <td>
+                            SessionStorage.clear();
+                        </td>
+                    </tr>
+                    
+                </tbody>
+           </table>
+
+
+            <div class="sessionStorageDemo">
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Automatically Saving Demonstration</title>
+                </head>
+                <body>
+
+                    <h2>Automatically Saving Demonstration</h2>
+                    <p>当输入东西时，sessionStorage会不断存入输入东西到对应key中实现自动存储</p>
+                    <p>sessionStorage有效期就只是当前tab/窗口(Window)打开时，因此刷新页面会自动恢复文字框内容</p>
+                    <p>打开同一页面URL，会创建多个sessionStorage，互不干扰</p>
+                    <p style="font-size: 13px;">"JS代码部分：getElementsByTagName --> 返回的是伪数组，但依然可以使用数组下标访问e.g document.getElementsByTagName('input')[0]   console.log(inputvar instanceof Array);   // false"</p>
+                    <input id="sessionStorageInput">
+                    <button>Submit</button>
+
+                    <script>
+                        // getElementsByTagName --> 返回的是伪数组，但依然可以使用数组下标访问 console.log(inputvar instanceof Array);   // false
+                        // var inputvar = document.getElementsByTagName("input")[0];    大Dome下内容多，别用
+                        
+                        var inputvar = document.getElementById("sessionStorageInput");
+
+                        // 自动恢复
+                        if(sessionStorage.getItem("autoSaveKey")){
+                            inputvar.value = sessionStorage.getItem("autoSaveKey");
+                        }
+
+                        // 给输入框添加监听
+                        inputvar.addEventListener("change", function(){
+                            sessionStorage.setItem("autoSaveKey", inputvar.value);
+                        })
+                    </script>
+                </body>
+                </html>
+            </div>
         </div>
     </main>
 </body>
