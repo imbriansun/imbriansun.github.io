@@ -144,12 +144,19 @@
 
     <h3>6. 使用inline-block代替float+clear方案</h3>
     <h4 style="text-indent: 2em;">display: inline-block 与 display: inline、block</h4>
-    <p style="text-indent: 2em;">inline-block与inline -- 允许设置width、height, top bottom margin padding</p>
+    <p style="text-indent: 2em;">inline-block与inline -- 允许设置width、height, top bottom - margin or padding</p>
     <p style="text-indent: 2em;">inline-block与block -- 不换行</p>
     <p style="text-indent: 2em;">下列代码效果一样<p>
     <pre>
         <a href="http://zh.learnlayout.com/inline-block.html">待制作demo</a>
     </pre>
+        <pre>
+        Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element.
+
+        Also, with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.
+
+        Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
+        </pre>
 
     <h3>7. 弹性盒子</h3>
     
